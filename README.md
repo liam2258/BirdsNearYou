@@ -15,7 +15,7 @@ This project uses ASP.NET core and requires the .NET SDK is installed on your ma
 Go to the project directory
 
 ```bash
-  cd BirdsNearYou
+  cd BirdsNearYou/src/BirdsNearYou
 ```
 
 Install dependencies
