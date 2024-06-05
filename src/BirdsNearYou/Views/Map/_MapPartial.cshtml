@@ -1,0 +1,30 @@
+﻿@model BirdsNearYou.Models.MapDataModel
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<div id="map" style="height: 400px;"></div>
+
+<script>
+    var mapLatitude = @Json.Serialize(Model.Latitude);
+    var mapLongitude = @Json.Serialize(Model.Longitude);
+    var BirdList = @Json.Serialize(Model.BirdData);
+    var map = L.map('map').setView([mapLatitude, mapLongitude], 7);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    BirdList.forEach(function (bird) {
+        var customPopupContent = `<div class="custom-popup">
+        <p>${bird.name} (${bird.scientificName})</p>
+        <img src="${bird.imageURL}" alt="Bird" style="max-width: 100%;" />
+             <p>For more info on this bird, check <a href="https://ebird.org/species/${bird.speciesCode}" target="_blank">here!</a></p>
+         <p>${bird.amount} spotted at ${bird.time}</p>
+        </div>`;
+
+        var marker = L.marker([bird.latitude, bird.longitude]).addTo(map);
+
+        marker.bindPopup(customPopupContent).openPopup();
+    });
+</script>

@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Select a state to get started. Enjoy finding birds near you!</p>
+</div>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<div>
+
+    <div id="partialViewContainer" style="height: 400px;">
+        @await Html.PartialAsync("_DefaultMapPartial")
+    </div>
+
+    <form id="StateSelector">
+        <select id="stateSelect" name="dataField" class="js-example-basic-single" style="width: 100%;">
+            <option value="AL" data-lat="32.806671" data-lon="-86.791130">Alabama</option>
+            <option value="AK" data-lat="61.370716" data-lon="-152.404419">Alaska</option>
+            <option value="AZ" data-lat="33.729759" data-lon="-111.431221">Arizona</option>
+            <option value="AR" data-lat="34.969704" data-lon="-92.373123">Arkansas</option>
+            <option value="CA" data-lat="36.116203" data-lon="-119.681564">California</option>
+            <option value="CO" data-lat="39.059811" data-lon="-105.311104">Colorado</option>
+            <option value="CT" data-lat="41.597782" data-lon="-72.755371">Connecticut</option>
+            <option value="DE" data-lat="39.318523" data-lon="-75.507141">Delaware</option>
+            <option value="FL" data-lat="27.766279" data-lon="-81.686783">Florida</option>
+            <option value="GA" data-lat="33.040619" data-lon="-83.643074">Georgia</option>
+            <option value="HI" data-lat="21.094318" data-lon="-157.498337">Hawaii</option>
+            <option value="ID" data-lat="44.240459" data-lon="-114.478828">Idaho</option>
+            <option value="IL" data-lat="40.349457" data-lon="-88.986137">Illinois</option>
+            <option value="IN" data-lat="39.849426" data-lon="-86.258278">Indiana</option>
+            <option value="IA" data-lat="42.011539" data-lon="-93.210526">Iowa</option>
+            <option value="KS" data-lat="38.526600" data-lon="-96.726486">Kansas</option>
+            <option value="KY" data-lat="37.668140" data-lon="-84.670067">Kentucky</option>
+            <option value="LA" data-lat="31.169546" data-lon="-91.867805">Louisiana</option>
+            <option value="ME" data-lat="44.693947" data-lon="-69.381927">Maine</option>
+            <option value="MD" data-lat="39.063946" data-lon="-76.802101">Maryland</option>
+            <option value="MA" data-lat="42.230171" data-lon="-71.530106">Massachusetts</option>
+            <option value="MI" data-lat="43.326618" data-lon="-84.536095">Michigan</option>
+            <option value="MN" data-lat="45.694454" data-lon="-93.900192">Minnesota</option>
+            <option value="MS" data-lat="32.741646" data-lon="-89.678696">Mississippi</option>
+            <option value="MO" data-lat="38.456085" data-lon="-92.288368">Missouri</option>
+            <option value="MT" data-lat="46.921925" data-lon="-110.454353">Montana</option>
+            <option value="NE" data-lat="41.125370" data-lon="-98.268082">Nebraska</option>
+            <option value="NV" data-lat="38.313515" data-lon="-117.055374">Nevada</option>
+            <option value="NH" data-lat="43.452492" data-lon="-71.563896">New Hampshire</option>
+            <option value="NJ" data-lat="40.298904" data-lon="-74.521011">New Jersey</option>
+            <option value="NM" data-lat="34.840515" data-lon="-106.248482">New Mexico</option>
+            <option value="NY" data-lat="42.165726" data-lon="-74.948051">New York</option>
+            <option value="NC" data-lat="35.630066" data-lon="-79.806419">North Carolina</option>
+            <option value="ND" data-lat="47.528912" data-lon="-99.784012">North Dakota</option>
+            <option value="OH" data-lat="40.388783" data-lon="-82.764915">Ohio</option>
+            <option value="OK" data-lat="35.565342" data-lon="-96.928917">Oklahoma</option>
+            <option value="OR" data-lat="44.572021" data-lon="-122.070938">Oregon</option>
+            <option value="PA" data-lat="40.590752" data-lon="-77.209755">Pennsylvania</option>
+            <option value="RI" data-lat="41.680893" data-lon="-71.511780">Rhode Island</option>
+            <option value="SC" data-lat="33.856892" data-lon="-80.945007">South Carolina</option>
+            <option value="SD" data-lat="44.299782" data-lon="-99.438828">South Dakota</option>
+            <option value="TN" data-lat="35.747845" data-lon="-86.692345">Tennessee</option>
+            <option value="TX" data-lat="31.054487" data-lon="-97.563461">Texas</option>
+            <option value="UT" data-lat="40.150032" data-lon="-111.862434">Utah</option>
+            <option value="VT" data-lat="44.045876" data-lon="-72.710686">Vermont</option>
+            <option value="VA" data-lat="37.769337" data-lon="-78.169968">Virginia</option>
+            <option value="WA" data-lat="47.400902" data-lon="-121.490494">Washington</option>
+            <option value="WV" data-lat="38.491226" data-lon="-80.954456">West Virginia</option>
+            <option value="WI" data-lat="44.268543" data-lon="-89.616508">Wisconsin</option>
+            <option value="WY" data-lat="42.755966" data-lon="-107.302490">Wyoming</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#stateSelect').select2();
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#StateSelector').submit(function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            var selectElement = $('#stateSelect');
+            var selectedOption = selectElement.find(':selected');
+            var state = selectedOption.val();
+            var latitude = selectedOption.data('lat');
+            var longitude = selectedOption.data('lon');
+
+            // Show loading animation inside partialViewContainer
+            $('#partialViewContainer').html('<div id="loading">Loading...</div>');
+
+            $.ajax({
+                url: '@Url.Action("GetBirdMap", "Map")',
+                type: 'POST',
+                data: {
+                    state: state,
+                    latitude: latitude,
+                    longitude: longitude
+                },
+                success: function (result) {
+                    // Replace loading animation with actual content
+                    $('#partialViewContainer').html(result);
+                },
+                error: function (xhr, status, error) {
+                    // Handle error if needed
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
