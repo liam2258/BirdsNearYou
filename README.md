@@ -1,7 +1,7 @@
 
 # BirdsNearYou
 
-A GIS web application that tracks bird sightings in an area. Select any state and see the most recent sightings courtesy of the Ebird orginization
+A GIS web application that tracks bird sightings in an area. Select any state and see the most recent sightings courtesy of the Ebird organization
 
 
 ## Run Locally
