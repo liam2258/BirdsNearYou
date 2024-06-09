@@ -28,6 +28,7 @@ namespace BirdsNearYou.Controllers
 
             // Get bird data from eBird API
             List<EbirdDataModel> ebirdList = await _ebirdService.GetBirdDataFromApiAsync(state, secret);
+            Console.WriteLine(ebirdList.Count);
 
             var birdList = ebirdList
                 .GroupBy(e => new { e.Lat, e.Lng })
