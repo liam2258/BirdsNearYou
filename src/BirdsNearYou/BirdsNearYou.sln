@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BirdsNearYou", "BirdsNearYo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F2BC513F-89F0-49FA-B815-19D94E97A0F2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BirdsNearYou.Tests", "..\..\tests\TestProject1\BirdsNearYou.Tests.csproj", "{03EFD688-8629-4DAE-BAAA-C21C920E5142}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BirdsNearYou.Tests", "..\..\tests\BirdsNearYouTests\BirdsNearYou.Tests.csproj", "{03EFD688-8629-4DAE-BAAA-C21C920E5142}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4B712487-9C0E-4C43-9508-1FB4FFB58353} = {4B712487-9C0E-4C43-9508-1FB4FFB58353}
 	EndProjectSection
