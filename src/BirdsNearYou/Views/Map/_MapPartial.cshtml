@@ -1,4 +1,4 @@
-﻿@model BirdsNearYou.Models.MapDataModel
+﻿@model MapDataModel
 
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -15,6 +15,13 @@
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
+    var customIcon = L.icon({
+        iconUrl: '/images/bird_pic.png',  // Replace with the path to your custom icon
+        iconSize: [32, 32], // size of the icon
+        iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
+        popupAnchor: [0, -32]
+    });
+
     BirdList.forEach(function (bird) {
         var customPopupContent = `<div class="custom-popup">
         <p>${bird.name} (${bird.scientificName})</p>
@@ -23,7 +30,7 @@
          <p>${bird.amount} spotted at ${bird.time}</p>
         </div>`;
 
-        var marker = L.marker([bird.latitude, bird.longitude]).addTo(map);
+        var marker = L.marker([bird.latitude, bird.longitude], { icon: customIcon }).addTo(map);
 
         marker.bindPopup(customPopupContent).openPopup();
     });

@@ -1,8 +1,8 @@
 ﻿using Moq;
 using Moq.Protected;
 using System.Net;
-using BirdsNearYou.Models;
 using Newtonsoft.Json;
+using BirdsNearYou.Models;
 
 namespace BirdsNearYou.Services.Tests
 {
