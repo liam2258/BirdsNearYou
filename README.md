@@ -49,7 +49,7 @@ Start the server
 This project uses xUnit for it's testing. After cloning the project tests can be run from the test directory using the following commands.
 
 ```bash
-  cd BirdsNearYou/tests
+  cd BirdsNearYou/tests/BirdsNearYouTests
 ```
 
 ```bash
