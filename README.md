@@ -6,7 +6,7 @@ A GIS web application that tracks bird sightings in an area. Select any state an
 
 ## Run Locally
 
-This project uses ASP.NET core and requires the .NET SDK is installed on your machine to run locally. Additionally this application makes use of third part API, Ebird and Flickr, for gathering data. In order to run the application you'll require API keys from the following sources:
+This project uses ASP.NET core and requires the .NET SDK is installed on your machine to run locally. Additionally this application makes use of third part API, Ebird and Flickr, for gathering data. In order to run the application with full functionality you'll require API keys from the following sources:
 
 Flickr: https://www.flickr.com/services/api/misc.api_keys.html
 
